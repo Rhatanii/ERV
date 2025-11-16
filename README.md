@@ -37,10 +37,9 @@ Folder structure will be updated soon.
 
 ## ⚡ Inference
 
-Run inference with ERV to generate interpretable and consistent emotional reasoning.
+Run inference to generate interpretable and consistent emotional reasoning.
 
 ```bash
-# Example inference command
 bash eval_shard.sh
 ```
 
