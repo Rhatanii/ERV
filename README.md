@@ -44,4 +44,5 @@ bash eval_shard.sh
 ```
 
 ## Acknowledgement
-This repository is built upon [R1-Omni](https://github.com/HumanMLLM/R1-Omni), [R1-V](https://github.com/StarsfieldAI/R1-V), and [HumanOmni](https://github.com/HumanMLLM/HumanOmni). We appreciate the open-source of the projects.
+This repository is built upon [R1-Omni](https://github.com/HumanMLLM/R1-Omni), [R1-V](https://github.com/StarsfieldAI/R1-V), and [HumanOmni](https://github.com/HumanMLLM/HumanOmni). 
+We appreciate the open-source of the projects.
