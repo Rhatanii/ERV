@@ -12,15 +12,5 @@ src/r1-v/checkpoints/
 src/text_emotion_classifier
 tools/
 
-eval_score_251113_surprise.py
-eval_score_all_file.py
-eval_shard-7B.sh
-eval_shard-HumanOmni-7B.sh
-eval_shard-SFT_AU.sh
-eval_shard-SFT-7B.sh
-eval_shard-SFT.sh
-extract_train_shard_DFEW.sh
-extract_train_shard_MAFW.sh
-run_after.sh
-setup.sh
-total_process.sh
+
+no_use/
