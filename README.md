@@ -23,7 +23,7 @@ Follow these steps to set up the environment required to run this project.
 
 ---
 
-##  checkpoint 📂 Model Checkpoints
+## 📂 Model Checkpoints
 
 Checkpoints will be uploaded soon.
 
@@ -31,7 +31,7 @@ Checkpoints will be uploaded soon.
 
 ## 🗂️ Folder Structure
 
-[TODO: Add a description of your project's folder structure here.]
+Folder structure will be updated soon.
 
 ---
 
