@@ -1,0 +1,4 @@
+datasets:
+# MAFW,DFEW
+  - json_path: /mnt/ssd_hs/Exp/R1-Omni/tools/data/dataset/fine-gpt-rephrase_no_label-balance/R1-Omni-0.5B_cold_start-total-all_w_EMER.json
+    sampling_strategy: all

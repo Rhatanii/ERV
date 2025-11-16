@@ -1,0 +1,28 @@
+modal: "video_audio"
+
+model:
+  mm_vision_tower: "google/siglip-so400m-patch14-384"
+  mm_audio_tower: /mnt/ssd_hs/Exp/R1-Omni/pre-trained/whisper-large-v3
+  model_size: "7B"
+
+data:
+  model_path: "/mnt/ssd_hs/Exp/R1-Omni/pre-trained/HumanOmni-7B"
+  # model_path: "StarJiaxing/HumanOmni-0.5B"
+  # model_path: "StarJiaxing/EMER-SFT-0.5B"
+  # model_path: "StarJiaxing/HumanOmni-7B" 
+  video_dataset_name: "MAFW"
+  label_path: "/mnt/ssd_hs/Dataset/MAFW/Train & Test Set/single/no_caption/set_5/test.txt"
+
+
+output_path:  "./results/MAFW/output_eval5_Human-Omni-7B-emotion_w_label-.txt"
+# human-omni ver
+# instruct: "Describe the video"
+instruct: "As an emotional recognition expert, in the video, when the characters display their emotions, which predominant feeling is most clearly expressed?\nhappy ,surprise ,neutral ,angry ,disgust ,sad ,fear ,contemptuous, disappointed, helpless, anxious"
+# load_4bit: true
+
+# R1-Omni ver
+# instruct: "As an emotional recognition expert; throughout the video, which emotion conveyed by the characters is the most obvious to you?"
+# instruct: "As an emotional recognition expert; throughout the video, which emotion conveyed by the characters is the most obvious to you?  Output the thinking process in <think> </think> and final emotion in <answer> </answer> tags."
+# instruct: "As an emotional recognition expert; throughout the video, which emotion conveyed by the characters is the most obvious to you?\nanger ,disgust ,fear ,happiness ,neutral ,sadness ,surprise, contempt, anxiety, helplessness, disappointment. Output the thinking process in <think> </think> and final emotion in <answer> </answer> tags."
+# instruct: "As an emotional recognition expert; throughout the video, which emotion conveyed by the characters is the most obvious to you?\n"
+CUDA_VISIBLE_DEVICES: 1

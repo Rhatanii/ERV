@@ -1,0 +1,4 @@
+datasets:
+# MAFW,DFEW
+  - json_path: /mnt/ssd_hs/Dataset/R1-Omni/cold_start/Unified/EMER_MAFW_DFEW-ERV_cold_start_new_format_av.json
+    sampling_strategy: all

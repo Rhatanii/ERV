@@ -1,0 +1,4 @@
+datasets:
+# MAFW,DFEW
+  - json_path: /mnt/data/jiaxing.zjx/code/HumanOmni/emotion.json
+    sampling_strategy: all   

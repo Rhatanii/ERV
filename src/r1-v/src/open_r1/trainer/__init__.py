@@ -1,0 +1,14 @@
+from .grpo_trainer import Qwen2VLGRPOTrainer
+from .vllm_grpo_trainer import Qwen2VLGRPOVLLMTrainer
+from .humanOmni_grpo_trainer import HumanOmniVLGRPOTrainer 
+# from .vllm_humanOmni_grpo_trainer import HumanOmniVLGRPOVLLMTrainer
+# from .humanOmni_grpo_clue_trainer import HumanOmniCLUEVLGRPOTrainer
+# from .humanOmni_grpo_text_trainer import HumanOmniVLGRPO_TEXT_Trainer
+# from .humanOmni_grpo_nothink_trainer import HumanOmniVLGRPO_Nothink_Trainer
+# from .humanOmni_grpo_text_trainer_7B import HumanOmniVLGRPO_TEXT_Trainer_7B
+# from .humanOmni_dr_grpo_text_trainer import HumanOmniVLGRPO_DR_TEXT_Trainer
+from .humanOmni_grpo_text_trainer_attention import HumanOmniVLGRPO_TEXT_Attention_Trainer
+from .humanOmni_grpo_text_trainer_attention_AU import HumanOmniVLGRPO_TEXT_Attention_AU_Trainer
+
+
+__all__ = ["Qwen2VLGRPOTrainer", "Qwen2VLGRPOVLLMTrainer", "HumanOmniVLGRPOTrainer", "HumanOmniCLUEVLGRPOTrainer", "HumanOmniVLGRPO_TEXT_Attention_Trainer", "HumanOmniVLGRPO_TEXT_Attention_AU_Trainer"]

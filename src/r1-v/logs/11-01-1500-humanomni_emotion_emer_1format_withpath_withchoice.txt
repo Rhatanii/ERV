@@ -1,0 +1,103 @@
+Log path set to: ./logs/11-01-1500-humanomni_emotion_emer_1format_withpath_withchoice.txt
+f_a_tswn
+[2025-11-01 15:00:19,362] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-11-01 15:00:19,440] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-11-01 15:00:19,490] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-11-01 15:00:19,790] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-11-01 15:00:19,850] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-11-01 15:00:19,916] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-11-01 15:00:19,966] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-11-01 15:00:20,017] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+INFO 11-01 15:00:21 __init__.py:190] Automatically detected platform cuda.
+INFO 11-01 15:00:21 __init__.py:190] Automatically detected platform cuda.
+INFO 11-01 15:00:21 __init__.py:190] Automatically detected platform cuda.
+INFO 11-01 15:00:21 __init__.py:190] Automatically detected platform cuda.
+INFO 11-01 15:00:21 __init__.py:190] Automatically detected platform cuda.
+INFO 11-01 15:00:21 __init__.py:190] Automatically detected platform cuda.
+INFO 11-01 15:00:22 __init__.py:190] Automatically detected platform cuda.
+INFO 11-01 15:00:22 __init__.py:190] Automatically detected platform cuda.
+Traceback (most recent call last):
+  File "/mnt/ssd_hs/Exp/R1-Omni/src/r1-v/src/open_r1/grpo-text_av_attention_AU.py", line 114, in <module>
+Traceback (most recent call last):
+  File "/mnt/ssd_hs/Exp/R1-Omni/src/r1-v/src/open_r1/grpo-text_av_attention_AU.py", line 114, in <module>
+    "think_av_focus_attention": think_av_focus_attention_reward,
+                                ^^^^^^    ^^"think_av_focus_attention": think_av_focus_attention_reward,^^
+^^^^^^^^^^^^^^ ^ ^ ^ ^ ^ ^ ^ 
+    NameError  :  name 'think_av_focus_attention_reward' is not defined            . Did you mean: ' think_av_attention_reward '?  
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'think_av_focus_attention_reward' is not defined. Did you mean: 'think_av_attention_reward'?
+Traceback (most recent call last):
+  File "/mnt/ssd_hs/Exp/R1-Omni/src/r1-v/src/open_r1/grpo-text_av_attention_AU.py", line 114, in <module>
+    "think_av_focus_attention": think_av_focus_attention_reward,
+            Traceback (most recent call last):
+          File "/mnt/ssd_hs/Exp/R1-Omni/src/r1-v/src/open_r1/grpo-text_av_attention_AU.py", line 114, in <module>
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'think_av_focus_attention_reward' is not defined. Did you mean: 'think_av_attention_reward'?
+    "think_av_focus_attention": think_av_focus_attention_reward,
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'think_av_focus_attention_reward' is not defined. Did you mean: 'think_av_attention_reward'?
+Traceback (most recent call last):
+  File "/mnt/ssd_hs/Exp/R1-Omni/src/r1-v/src/open_r1/grpo-text_av_attention_AU.py", line 114, in <module>
+    "think_av_focus_attention": think_av_focus_attention_reward,
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'think_av_focus_attention_reward' is not defined. Did you mean: 'think_av_attention_reward'?
+Traceback (most recent call last):
+  File "/mnt/ssd_hs/Exp/R1-Omni/src/r1-v/src/open_r1/grpo-text_av_attention_AU.py", line 114, in <module>
+    "think_av_focus_attention": think_av_focus_attention_reward,
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'think_av_focus_attention_reward' is not defined. Did you mean: 'think_av_attention_reward'?
+Traceback (most recent call last):
+  File "/mnt/ssd_hs/Exp/R1-Omni/src/r1-v/src/open_r1/grpo-text_av_attention_AU.py", line 114, in <module>
+    "think_av_focus_attention": think_av_focus_attention_reward,
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'think_av_focus_attention_reward' is not defined. Did you mean: 'think_av_attention_reward'?
+Traceback (most recent call last):
+  File "/mnt/ssd_hs/Exp/R1-Omni/src/r1-v/src/open_r1/grpo-text_av_attention_AU.py", line 114, in <module>
+    "think_av_focus_attention": think_av_focus_attention_reward,
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'think_av_focus_attention_reward' is not defined. Did you mean: 'think_av_attention_reward'?
+W1101 15:00:26.175000 1914294 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 1914303 closing signal SIGTERM
+W1101 15:00:26.175000 1914294 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 1914305 closing signal SIGTERM
+W1101 15:00:26.176000 1914294 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 1914306 closing signal SIGTERM
+W1101 15:00:26.176000 1914294 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 1914307 closing signal SIGTERM
+W1101 15:00:26.177000 1914294 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 1914308 closing signal SIGTERM
+W1101 15:00:26.177000 1914294 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 1914309 closing signal SIGTERM
+E1101 15:00:26.535000 1914294 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 0 (pid: 1914302) of binary: /mnt/ssd_hs/envs/r1-v/bin/python
+Traceback (most recent call last):
+  File "/mnt/ssd_hs/envs/r1-v/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/mnt/ssd_hs/envs/r1-v/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd_hs/envs/r1-v/lib/python3.11/site-packages/torch/distributed/run.py", line 919, in main
+    run(args)
+  File "/mnt/ssd_hs/envs/r1-v/lib/python3.11/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/mnt/ssd_hs/envs/r1-v/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd_hs/envs/r1-v/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/mnt/ssd_hs/Exp/R1-Omni/src/r1-v/src/open_r1/grpo-text_av_attention_AU.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2025-11-01_15:00:26
+  host      : user-SYS-4029GP-TRT2
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 1914304)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-11-01_15:00:26
+  host      : user-SYS-4029GP-TRT2
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 1914302)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

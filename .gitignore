@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+
+# Other common files to ignore
+analysis/
+data/
+humanomni/__pycache__/
+junilwon/
+pre-trained/
+results/
+src/r1-v/checkpoints/
+src/text_emotion_classifier
+tools/

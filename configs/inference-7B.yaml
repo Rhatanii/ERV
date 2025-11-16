@@ -1,0 +1,20 @@
+modal: "video_audio"
+
+model:
+  mm_vision_tower: "google/siglip-so400m-patch14-384"
+  mm_audio_tower: /mnt/ssd_hs/Exp/R1-Omni/pre-trained/whisper-large-v3
+  model_size: "7B"
+
+data:
+  model_path: "/mnt/ssd_hs/Exp/R1-Omni/src/r1-v/results-11-08-AV_FORMAT_ACC_TSA_ep2-G4-lr1e-6_bs1_ga2_b0.04/checkpoint-1050"
+  # "/mnt/ssd_hs/Exp/R1-Omni/pre-trained/HumanOmni-7B"
+  video_path: "/mnt/ssd_hs/Dataset/MAFW/clips/10766.mp4"
+  # "/mnt/ssd_hs/Dataset/MAFW/clips/10337.mp4"
+
+instruct: "Please describe the emotion state of the video content in detail."
+# "As an emotional recognition expert; throughout the video, which emotion conveyed by the characters is the most obvious to you?  Output the thinking process in <think> </think> and final emotion in <answer> </answer> tags."
+
+CUDA_VISIBLE_DEVICES: 1
+
+cache_dir: "/mnt/ssd_hs/.cache"
+# "As an emotional recognition expert; throughout the video, which emotion conveyed by the characters is the most obvious to you?  Output the thinking process in <think> </think> and final emotion in <answer> </answer> tags."

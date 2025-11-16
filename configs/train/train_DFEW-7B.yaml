@@ -1,0 +1,21 @@
+modal: "video_audio"
+
+model:
+  mm_vision_tower: "google/siglip-so400m-patch14-384"
+  mm_audio_tower: /mnt/ssd_hs/Exp/R1-Omni/pre-trained/whisper-large-v3
+  model_size: "7B"
+
+data:
+  model_path: "StarJiaxing/HumanOmni-7B"
+  # model_path: "StarJiaxing/HumanOmni-0.5B"
+  # model_path: "StarJiaxing/EMER-SFT-0.5B"
+  label_path: "/mnt/ssd_hs/Dataset/DFEW/label/single_trainset_5.csv"
+  video_dataset_name: "DFEW"
+
+
+
+output_path:  "./results/DFEW/1-Omni-0.5B/output_train5-av.txt"
+# instruct: "As an emotional recognition expert; throughout the video, which emotion conveyed by the characters is the most obvious to you?  Output the thinking process in <think> </think> and final emotion in <answer> </answer> tags."
+# instruct: "As an emotional recognition expert, in the video, when the characters display their emotions, which predominant feeling is most clearly expressed?\nhappy ,surprise ,neutral ,angry ,disgust ,sad ,fear"
+instruct: "Describe this video"
+CUDA_VISIBLE_DEVICES: 1

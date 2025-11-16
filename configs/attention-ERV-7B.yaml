@@ -1,0 +1,20 @@
+modal: "video_audio"
+
+model:
+  mm_vision_tower: /mnt/ssd_hs/Exp/R1-Omni/pre-trained/siglip-so400m-patch14-384
+  mm_audio_tower: /mnt/ssd_hs/Exp/R1-Omni/pre-trained/whisper-large-v3
+  model_size: "7B"
+
+data:
+  # model_path: "StarJiaxing/R1-Omni-0.5B"
+  model_path: "/mnt/ssd_hs/Exp/R1-Omni/src/r1-v/results-0805-EMER-SFT-THINK_step-7B-epoch2-ratio1.0-grpo4-lr1e-6"
+  # video_dataset_name: "MAFW"
+  # label_path: "/mnt/ssd_hs/Dataset/MAFW/Train & Test Set/single/no_caption/set_5/test.txt"
+
+  video_dataset_name: "DFEW"
+  label_path: "/mnt/ssd_hs/Dataset/DFEW/label/single_testset_5.csv"
+# reason_answer_dir: "/mnt/ssd_hs/Exp/R1-Omni/tools/compare-gpt-r1/sample_id_list/MAFW-results-07-21-0959-EMER-SFT-0.5B-FORMAT_ACC_THINK-STEP-epoch2-ratio1.0-grpo16-lr1e-6_checkpoint-2088"
+# AV_dir: "/mnt/ssd_hs/Exp/R1-Omni/analysis"
+instruct: "As an emotional recognition expert; throughout the video, which emotion conveyed by the characters is the most obvious to you? Output the thinking process in <think> </think> and final emotion in <answer> </answer> tags."
+
+# "As an emotional recognition expert; throughout the video, which emotion conveyed by the characters is the most obvious to you?  Output the thinking process in <think> </think> and final emotion in <answer> </answer> tags."
