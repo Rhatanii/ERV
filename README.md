@@ -1,4 +1,4 @@
-# Emotion-Coherent-Reasoning
+# Emotion Coherent Reasoning
 
 Our ERV project handles interpretable and consistent explanation about Multimodal Emotion Recognition.
 
