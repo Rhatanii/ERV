@@ -25,7 +25,11 @@ Follow these steps to set up the environment required to run this project.
 
 ## 📂 Model Checkpoints
 
-Checkpoints will be uploaded soon.
+- ERV-0.5B
+https://huggingface.co/Rhatanii/ERV-0.5B
+
+- ERV-7B
+https://huggingface.co/Rhatanii/ERV-7B
 
 ---
 
