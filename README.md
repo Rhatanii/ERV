@@ -2,7 +2,8 @@
 
 Our ERV project handles interpretable and consistent explanation about Multimodal Emotion Recognition.
 
-🎉 Accepted to AAAI 2026! [paper](https://arxiv.org/pdf/2510.23506)
+🎉 Accepted to AAAI 2026! 
+[[paper]](https://arxiv.org/pdf/2510.23506)
 
 ---
 
