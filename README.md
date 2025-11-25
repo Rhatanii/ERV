@@ -45,13 +45,13 @@ The model training consists of two main stages.
 1.  **SFT (Supervised Fine-Tuning) for Cold Start**
     * **Description:** The initial supervised learning phase to establish baseline model performance with formatted output.
     ```bash
-    scripts/finetune_omni_add_reasoning.sh
+    bash scripts/finetune_omni_add_reasoning.sh
     ```
 
 2.  **GRPO Training with ERV**
     * **Description:** The RL phase using GRPO to optimize for emotion-coherent reasoning.
     ```bash
-    src/r1-v/run_grpo_ERV.sh
+    bash src/r1-v/run_grpo_ERV.sh
     ```
 
 ### 📊 Evaluation Code
