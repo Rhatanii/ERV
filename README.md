@@ -1,6 +1,8 @@
-# Emotion Coherent Reasoning
+# Emotion-Coherent Reasoning for Multimodal LLMs via Emotional Rationale Verifier
 
 Our ERV project handles interpretable and consistent explanation about Multimodal Emotion Recognition.
+
+🎉 Accepted to AAAI 2026!
 
 ---
 
@@ -25,11 +27,59 @@ Follow these steps to set up the environment required to run this project.
 
 ## 📂 Model Checkpoints
 
-- ERV-0.5B
-https://huggingface.co/Rhatanii/ERV-0.5B
+| Model Name | Download Link (Hugging Face) |
+| :--- | :--- |
+| **Emotion_Verifier** | [https://huggingface.co/Rhatanii/Emo_Classifier](https://huggingface.co/Rhatanii/Emo_Classifier) |
+| **ERV-0.5B** | [https://huggingface.co/Rhatanii/ERV-0.5B](https://huggingface.co/Rhatanii/ERV-0.5B) |
+| **ERV-7B** | [https://huggingface.co/Rhatanii/ERV-7B](https://huggingface.co/Rhatanii/ERV-7B) |
 
-- ERV-7B
-https://huggingface.co/Rhatanii/ERV-7B
+---
+
+## 💡 Training & Evaluation
+
+### 🛠️ Training Code
+
+The model training consists of two main stages.
+
+1.  **SFT (Supervised Fine-Tuning) for Cold Start**
+    * **Description:** The initial supervised learning phase to establish baseline model performance with formatted output.
+    ```bash
+    scripts/finetune_omni_add_reasoning.sh
+    ```
+
+2.  **GRPO Training with ERV**
+    * **Description:** The RL phase using GRPO to optimize for emotion-coherent reasoning.
+    ```bash
+    src/r1-v/run_grpo_ERV.sh
+    ```
+
+### 📊 Evaluation Code
+
+Scripts for evaluating reasoning coherence and core performance metrics.
+
+1.  **Emotion Recognition Performance**
+    * **Objective:** Measure the accuracy of the Emotion Recognition task.
+    ```bash
+    python eval_score.py
+    ```
+
+2.  **Novel Metrics about Reasoning**
+    * **Objective:** Measure the consistency and quality of the generated emotional rationales.
+
+    * **A. Emotional Judgment via GPT API**
+        * **Description:** Uses the GPT API to assess the emotional coherence of the generated reasoning.
+        * **Execution:**
+            ```bash
+            bash tools/response_gpt_check.sh
+            ```
+        * **Note:** Requires GPT API key setup in the `tools/utils.py` directory.
+
+    * **B. EEA / FCR / EPC Metric Check**
+        * **Description:** Calculates key reasoning metrics: **E**xplanation **E**motion **A**ccuracy (EEA), **F**aithgul **C**onsistency **R**ate (FCR), and **E**xplanation-**P**rediction **C**onsistency (EPC).
+        ```bash
+        cd tools/compare
+        python compare_reason_recognition.py
+        ```
 
 ---
 
