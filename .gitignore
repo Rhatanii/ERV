@@ -3,16 +3,27 @@ __pycache__/
 
 # Other common files to ignore
 analysis/
-data/
+
 humanomni/__pycache__/
 junilwon/
 pre-trained/
 results/
 src/r1-v/checkpoints/
 src/text_emotion_classifier
-tools/
+src/r1-v/src/open_r1/__pycache__/
 
 
+src/r1-v/src/open_r1/trainer/__pycache__/
 no_use/
 
 ERV/
+Emo_Classifier/
+
+hf_cache/
+tools/__pycache__
+tools_real/
+data_real/
+eval_score_real.py
+eval_shard_real.py
+eval_shard_real.sh
+utils_main_real.py
