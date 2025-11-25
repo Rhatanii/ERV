@@ -2,7 +2,7 @@
 
 Our ERV project handles interpretable and consistent explanation about Multimodal Emotion Recognition.
 
-🎉 Accepted to AAAI 2026! 
+🎉 Accepted to **AAAI 2026**! 
 [[paper]](https://arxiv.org/pdf/2510.23506)
 
 ---
@@ -60,9 +60,10 @@ Scripts for evaluating reasoning coherence and core performance metrics.
 
 1.  **Emotion Recognition Performance**
     * **Objective:** Measure the accuracy of the Emotion Recognition task.
-    ```bash
-    python eval_score.py
-    ```
+    * **Execution:**
+        ```bash
+        python eval_score.py
+        ```
 
 2.  **Novel Metrics about Reasoning**
     * **Objective:** Measure the consistency and quality of the generated emotional rationales.
@@ -77,16 +78,11 @@ Scripts for evaluating reasoning coherence and core performance metrics.
 
     * **B. EEA / FCR / EPC Metric Check**
         * **Description:** Calculates key reasoning metrics: **E**xplanation **E**motion **A**ccuracy (EEA), **F**aithgul **C**onsistency **R**ate (FCR), and **E**xplanation-**P**rediction **C**onsistency (EPC).
-        ```bash
-        cd tools/compare
-        python compare_reason_recognition.py
-        ```
-
----
-
-## 🗂️ Folder Structure
-
-Folder structure will be updated soon.
+        * **Execution:**
+            ```bash
+            cd tools/compare
+            python compare_reason_recognition.py
+            ```
 
 ---
 
