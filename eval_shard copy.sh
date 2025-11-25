@@ -12,6 +12,8 @@ use_only_AU_matched_dataset=False
 temperature_LIST=(0.3)
 do_sample=True
 
+instruction="As an emotion recognition expert, analyze the video considering visual behavior, and audio tone. Describe your observations using the tags <vis_desc> and <aud_desc> for visual, and audio cues respectively. Focus first on the modality that provides the most important information for emotion prediction. Then, integrate all these cues into a reasoning process in <think> </think>, and provide the final predicted emotion in <answer> </answer> tags."
+
 for temperature in "${temperature_LIST[@]}"
 do
     echo "Temperature: $temperature"
@@ -24,9 +26,15 @@ do
         do
             for with_label in false
             do
+                # --- 조건문 추가 부분 ---
+                # if [[ "$temperature" == "1" && "$with_label" == "true" && "$DATASET_NAME" == "MAFW" ]]; then
+                #     echo "Skipping case: temperature=$temperature, with_label=$with_label, DATASET_NAME=$DATASET_NAME"
+                #     continue
+                # fi
 
                 if [ "$with_label" = false ]; then
-                    instruction="As an emotional recognition expert; throughout the video, which emotion conveyed by the characters is the most obvious to you?  Output the thinking process in <think> </think> and final emotion in <answer> </answer> tags."
+                    instruction="As an emotion recognition expert, analyze the video considering visual behavior, and audio tone. Describe your observations using the tags <vis_desc> and <aud_desc> for visual, and audio cues respectively. Focus first on the modality that provides the most important information for emotion prediction. Then, integrate all these cues into a reasoning process in <think> </think>, and provide the final predicted emotion in <answer> </answer> tags."
+                    # instruction="As an emotional recognition expert; throughout the video, which emotion conveyed by the characters is the most obvious to you?  Output the thinking process in <think> </think> and final emotion in <answer> </answer> tags."
                 elif [ "$with_label" = true ] && [ "$DATASET_NAME" = DFEW ];then
                     instruction="As an emotional recognition expert; throughout the video, which emotion conveyed by the characters is the most obvious to you?\n happy ,surprise ,neutral ,angry ,disgust ,sad ,fear. Output the thinking process in <think> </think> and final emotion in <answer> </answer> tags."
                 elif [ "$with_label" = true ] && [ "$DATASET_NAME" = MAFW ];then

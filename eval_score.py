@@ -94,11 +94,12 @@ def print_results(emotion_count, correct, unknown, count_idx, unknown_list, conf
 
 if __name__ == "__main__":
     ###################### Configs ######################
-    dataset_name = "MAFW" # DFEW / MAFW / RAVDESS
+    dataset_name = "DFEW" # DFEW / MAFW / RAVDESS
     data_type="test" # train / test
-    choose_id= "Ablation_TS_only_MIGR"  # Choose from result_folder_dict keys
-    ckpt_id=1000 #"1044" or None 
-    temperature=0.3
+    
+    choose_id= "TRI-AV-MI-SFT-7B"  # Choose from result_folder_dict keys
+    ckpt_id=None #"1044" or None 
+    temperature=None
     result_folder_dict = {"R1-7B": "R1-7B",
                           "ERV-7B": "ERV-7B",
                           "R1-0.5B": "R1-0.5B",
