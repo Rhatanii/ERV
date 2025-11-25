@@ -1,3 +1,0 @@
-Log path set to: ./logs/11-01-1457-humanomni_emotion_emer_1format_withpath_withchoice.txt
-f_a_tswn
-src/r1-v/run_grpo_humanomni-rlvr-av_attention-AU.sh: line 81: /data/IVL/anaconda3/envs/r1-v/bin/python: No such file or directory

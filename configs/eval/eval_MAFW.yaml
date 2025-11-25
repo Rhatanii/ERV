@@ -1,21 +1,8 @@
-modal: "video_audio"
-
 model:
-  mm_vision_tower: /mnt/ssd_hs/Exp/R1-Omni/pre-trained/siglip-base-patch16-224
-  mm_audio_tower: /mnt/ssd_hs/Exp/R1-Omni/pre-trained/whisper-large-v3
+  mm_vision_tower: "google/siglip-base-patch16-224"
+  mm_audio_tower: "openai/whisper-large-v3"
   model_size: "0.5B"
   
 data:
-  # model_path: "/mnt/ssd_hs/Exp/R1-Omni/src/r1-v/results-0420-sft-rlvr-add-gpt"
-  # model_path: "/mnt/ssd_hs/Exp/R1-Omni/work_dirs/humanomniqwen2_siglip/finetune_EMER_SFT"
-  # model_path: "StarJiaxing/R1-Omni-0.5B"
-  model_path: "/mnt/ssd_hs/Exp/R1-Omni/src/r1-v/results-07-21-0959-EMER-SFT-0.5B-FORMAT_ACC_THINK-STEP-epoch2-ratio1.0-grpo16-lr1e-6/checkpoint-2088"
-  # model_path: "StarJiaxing/HumanOmni-0.5B"
-  # model_path: "/mnt/ssd_hs/Exp/R1-Omni/src/r1-v/results-0426-sft-rlvr-no-emotion"
-  # model_path: "StarJiaxing/HumanOmni-7B" 
-
   video_dataset_name: "MAFW"
   label_path: "/mnt/ssd_hs/Dataset/MAFW/Train & Test Set/single/no_caption/set_5/test.txt"
-
-load_4bit: true
-CUDA_VISIBLE_DEVICES: 0

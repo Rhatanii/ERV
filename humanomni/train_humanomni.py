@@ -85,11 +85,10 @@ bert_model = "/mnt/ssd_hs/Exp/R1-Omni/pre-trained/bert-base-uncased"
 bert_tokenizer = BertTokenizer.from_pretrained(bert_model)
 
 
-# 设置 NCCL 的阻塞等待模式和超时（单位为秒）
+# Configure the blocking wait mode and timeout (in seconds) for NCCL.
 os.environ["NCCL_BLOCKING_WAIT"] = "1"
 os.environ["NCCL_ASYNC_ERROR_HANDLING"] = "1"
-os.environ["NCCL_DEBUG"] = "WARN"  # 可选，调试时使用
-# 设置超时时间为3分钟（180秒）
+os.environ["NCCL_DEBUG"] = "WARN"  # Optional, used during debugging
 os.environ["NCCL_TIMEOUT"] = "180"
 
 
@@ -204,20 +203,20 @@ def add_audio_token_to_sources(sources):
         for conv in item['conversations']:
             if conv['from'] == 'human':
                 value = conv['value']
-                # 检查当前的标记状态
+                # Check the current tag status
                 has_video = '<video>' in value
                 has_audio = '<audio>' in value
                 
                 if has_video and has_audio:
-                    # 已经同时包含两个标记，不需要修改
+                    # It already contains two tags and does not need to be modified.
                     continue
                 elif has_video and not has_audio:
-                    # 只有 video，添加 audio
+                    # If there's only video, add audio.
                     conv['value'] = value.replace('<video>\n', '<video>\n<audio>\n')
                 elif has_audio and not has_video:
-                    # 只有 audio，添加 video
+                    # Only audio is available, add video.
                     conv['value'] = value.replace('<audio>\n', '<video>\n<audio>\n')
-                # 如果两个都没有的情况，保持原样不变
+
     return sources
 
 def preprocess_plain(
@@ -749,7 +748,7 @@ def train(attn_implementation=None):
         tokenizer.pad_token_id = 128001
         
     # if "model" in locals() and num_added_tokens > 0:
-    #     # len(tokenizer) == 새 vocab_size
+    #     # len(tokenizer) ==  vocab_size
     #     model.resize_token_embeddings(len(tokenizer))
         
     # Vision and Audio Tower Initialization

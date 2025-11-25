@@ -266,7 +266,7 @@ def read_video_patch(patch_info, data_folder="/mnt/data/yixing.pyx/checkpoints/O
     return images_all, is_image
 
 def resize_with_limit(image, max_size=512):
-    """辅助函数：限制图像最长边"""
+    """Auxiliary function: Limit the longest side of an image"""
     width, height = image.size
     if max(width, height) > max_size:
         scale = max_size / max(width, height)
@@ -292,7 +292,7 @@ def process_image(image_path, processor, aspect_ratio='pad'):
 def process_image_qwen(image_path, processor, aspect_ratio='pad'):
     image = Image.open(image_path).convert('RGB')
     
-    # 使用resize_with_limit函数限制图像大小
+    # Use the `resize_with_limit` function to limit the image size.
     image = resize_with_limit(image)
     
     images = [np.array(image)]
@@ -454,7 +454,7 @@ def process_video_qwen(video_path, processor, s=None, e=None, aspect_ratio='pad'
         else:
             sampled_frame_indices = [frame_indices[i] for i in frame_sample(duration, mode='uniform', num_frames=num_frames)]
         
-        # 加载帧并应用大小限制
+        # Load frames and apply size limits
         if os.path.isdir(video_path): 
             video_data = [resize_with_limit(Image.open(os.path.join(video_path, frame_files[f_idx]))) for f_idx in sampled_frame_indices]
         elif video_path.endswith('.gif'):

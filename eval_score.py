@@ -1,13 +1,6 @@
-'''
-1. Load label path and emotion dict
-2. Load eval.txt, Rearrange to one line per sample
-3. Count Results
-4. Print Results
-
-'''
 import pandas as pd
-pd.set_option('display.max_columns', None)  # 모든 열 출력
-pd.set_option('display.width', 1000)       # 출력 폭 설정
+pd.set_option('display.max_columns', None)  
+pd.set_option('display.width', 1000)       
 
 from utils_main import *
 
@@ -94,30 +87,22 @@ def print_results(emotion_count, correct, unknown, count_idx, unknown_list, conf
 
 if __name__ == "__main__":
     ###################### Configs ######################
-    dataset_name = "DFEW" # DFEW / MAFW / RAVDESS
-    data_type="test" # train / test
+    dataset_name = "DFEW" # DFEW / MAFW 
+    data_type="test" #  test
     
-    choose_id= "TRI-AV-MI-SFT-7B"  # Choose from result_folder_dict keys
-    ckpt_id=None #"1044" or None 
-    temperature=None
+    choose_id= "ERV-7B"  # Choose from result_folder_dict keys
+    ckpt_id=None # ckpt id
+    temperature=None # e.g., 0.7 ; None for default
     result_folder_dict = {"R1-7B": "R1-7B",
                           "ERV-7B": "ERV-7B",
                           "R1-0.5B": "R1-0.5B",
                           "ERV-0.5B": "ERV-0.5B",
                           "EMER-SFT-7B": "EMER-SFT-7B",
                           "EMER-SFT-0.5B": "EMER-SFT-0.5B",
-                          "M-ERV-7B": "M-ERV-7B",
-                          "TRI-AV-MI-SFT-7B": "TRI-AV-MI-SFT-7B",
-                          "TRI-AV-NO-MI-SFT-7B": "TRI-AV-NO-MI-SFT-7B",
-                          "MERR-SFT-7B": "MERR-SFT-7B",
-                          "Baseline-0.5B": "Baseline-0.5B",
-                          "Ablation-TRI-AV-SFT-7B_wo_TS": "Ablation-TRI-AV-SFT-7B_wo_TS",
-                          "results-11-08-0324-AV-EMER-SFT-0.5B-af_a_tsa-epoch2-G16-lr1e-6-bs2-ga2/checkpoint-900": "results-11-08-0324-AV-EMER-SFT-0.5B-af_a_tsa-epoch2-G16-lr1e-6-bs2-ga2/checkpoint-900"
-                          
                           }
     ###################### Options ######################
-    check_wrong_samples = False # Prediction 틀리는 Sample 저장.
-    check_multi_emotion= False # MAFW only for checking multi-emotion
+    check_wrong_samples = False #
+    check_multi_emotion= False #
     
     if ckpt_id is None:
         result_forder_name=choose_id
@@ -129,15 +114,14 @@ if __name__ == "__main__":
     else:
         output_eval_path =f"/mnt/ssd_hs/Exp/R1-Omni/results/{dataset_name}/{result_forder_name}/label_false/output_eval5_all-video_audio.txt"
 
+
+
     ###################### Evaluation ######################
     # 1. Load label path and emotion dict
     label_path, emotion_dict = load_label_path_and_emotion_dict(dataset_name, data_type, check_multi_emotion)
     
     # 2. Load eval.txt, Rearrange to one line per sample
-    if dataset_name == "RAVDESS":
-        total_lines = rearrange_one_line_ravdess(output_eval_path)
-    else:
-        total_lines = rearrange_one_line(output_eval_path)
+    total_lines = rearrange_one_line(output_eval_path)
 
     # 3. Count Results
     emotion_count, correct, unknown, count_idx, unknown_list, confusion_matrix = extract_results(emotion_dict, total_lines, label_path, check_multi_emotion, check_wrong_samples)
