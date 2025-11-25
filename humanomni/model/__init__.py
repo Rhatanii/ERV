@@ -23,7 +23,6 @@ from transformers import PretrainedConfig, AutoTokenizer, AutoModelForCausalLM, 
 
 from .projector import load_mm_projector
 from .humanomni_model import HumanOmniQwen2ForCausalLM, HumanOmniQwen2Config
-# from .humanomni_model_dft_loss import HumanOmniQwen2ForCausalLM, HumanOmniQwen2Config
 
 
 

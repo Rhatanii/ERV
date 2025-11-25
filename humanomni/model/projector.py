@@ -170,18 +170,18 @@ class PllavaMultiModalProjector(nn.Module):
     supported_highres = ['pad_crop_four', 'slide', ]
     def __init__(self, config):
         super().__init__()
-        # 复用 STCConnector 的配置参数
+        # Reuse STCConnector configuration parameters
         self.encoder_hidden_size = encoder_hidden_size = config.mm_hidden_size
         self.hidden_size = hidden_size = config.hidden_size
         self.output_hidden_size = output_hidden_size = config.hidden_size
         
-        # PLLAVA 特有的配置参数，写死或使用默认值
+        # PLLAVA-specific configuration parameters can be hardcoded or default values ​​can be used.
         self.use_pooling = True
         self.frame_shape = (27, 27)  # 默认值
         self.num_frames = getattr(config, 'num_frames', 16)  # 如果config中没有，使用默认值16
         self.pooling_shape = (8, 14, 14)  # 固定值
         
-        # 模型层定义
+        # Model layer 
         self.pooling = nn.AdaptiveAvgPool3d(self.pooling_shape)
         self.linear_1 = nn.Linear(encoder_hidden_size, hidden_size, bias=True)
         self.act = nn.SiLU()  # 使用与 STCConnector 相同的激活函数
@@ -206,50 +206,50 @@ class PllavaMultiModalProjector(nn.Module):
         """
         Args:
             x: input tokens [b, t, h, w, d] / [b, t, l, d]
-            split_sizes: 每个样本的帧数列表，如果是图片则为1
-            num_frames: 目标帧数
+            split_sizes: A list of frames per sample; 1 if it's an image.
+            num_frames: The target number of frames.
         Returns:
             aggregated tokens [b, l, d]
         """
         if split_sizes is not None:
-            # 处理混合输入（图片和视频）
+            # Handling mixed input (images and videos)
             x = torch.split(x, split_sizes)
             features = []
             for idx, feat in enumerate(x):
-                if feat.shape[0] == 1:  # 图片输入
+                if feat.shape[0] == 1:  # Image input
                     feat = feat.expand(num_frames, -1, -1)
                     features.append(feat)
-                else:  # 视频输入
+                else:  # Video input
                     features.append(feat)
             x = torch.stack(features, dim=0)
             b, t, l, d = x.shape
         else:
-            # 单一类型输入
+            # Single type input
             if x.ndim == 5:  # [b, t, h, w, d]
                 b, t, h, w, d = x.shape
                 x = einops.rearrange(x, 'b t h w d -> b t (h w) d')
             else:  # [b, t, l, d]
                 b, t, l, d = x.shape
 
-        # 确保空间维度正确
+        # Ensure correct spatial dimensions
         if l != self.frame_shape[0] * self.frame_shape[1]:
             hw = int(l ** 0.5)
             assert hw * hw == l, f"Input spatial dimension {l} is not a perfect square"
             self.frame_shape = (hw, hw)
 
-        # 线性投影
+        # Linear projection
         hidden_states = self.linear_1(x)
         hidden_states = self.act(hidden_states)
         hidden_states = self.linear_2(hidden_states)
 
-        # 转换为视频格式
+        # Convert to video format
         hidden_states = einops.rearrange(hidden_states, 'b t l d -> (b t) l d')
         hidden_states_videos = self.convert_Fembeddings2video(hidden_states, b, self.frame_shape)
         
-        # 池化
+        # Pooling
         hidden_states_videos = self.pooling(hidden_states_videos)
         
-        # 重塑输出格式
+        # Reshape output format
         hidden_states = einops.rearrange(hidden_states_videos, 'b d t h w -> b (t h w) d')
         
         return hidden_states
