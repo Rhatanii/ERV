@@ -5,6 +5,7 @@ Our ERV project handles interpretable and consistent explanation about Multimoda
 🎉 Accepted to **AAAI 2026**! 
 [[paper]](https://arxiv.org/pdf/2510.23506)
 
+![Figure](figures/Figure 1.pdf)
 ---
 
 ## 🚀 Environment Setup
