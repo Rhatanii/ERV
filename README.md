@@ -6,6 +6,8 @@ Our ERV project handles interpretable and consistent explanation about Multimoda
 [[paper]](https://arxiv.org/pdf/2510.23506)
 
 ---
+![image](figures/Figure1.png)
+
 
 ## 🚀 Environment Setup
 
