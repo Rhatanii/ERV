@@ -55,7 +55,7 @@ elif [ "${MODEL_SIZE}" == "7B" ]; then
     MODEL_NAME=${MODEL_SRC}/HumanOmni-7B
     MM_PROJ_TYPE="all_in_one"
     VISION_TOWER_NAME=${MODEL_SRC}/siglip-so400m-patch14-384
-
+fi
 
 # Learnable parts
 MM_TUNABLE_PARTS="mm_language_model,mm_mlp_adapter,audio_projector,mm_vision_tower"
